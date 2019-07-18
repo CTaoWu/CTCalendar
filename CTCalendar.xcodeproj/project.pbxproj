@@ -16,7 +16,8 @@
 		A59706BB22E0693F0020963B /* CTMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706B322E0693F0020963B /* CTMonthView.m */; };
 		A59706BC22E0693F0020963B /* CTDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706B422E0693F0020963B /* CTDayCell.m */; };
 		A59706BD22E0693F0020963B /* CTMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706B522E0693F0020963B /* CTMonthCell.m */; };
-		A59706BE22E0693F0020963B /* CTCalendarFlowLAyout.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706BA22E0693F0020963B /* CTCalendarFlowLAyout.m */; };
+		A59706BE22E0693F0020963B /* CTCalendarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706BA22E0693F0020963B /* CTCalendarFlowLayout.m */; };
+		A59706C122E078650020963B /* NSDate+Calander.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706C022E078650020963B /* NSDate+Calander.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +34,14 @@
 		A59706B322E0693F0020963B /* CTMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMonthView.m; sourceTree = "<group>"; };
 		A59706B422E0693F0020963B /* CTDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDayCell.m; sourceTree = "<group>"; };
 		A59706B522E0693F0020963B /* CTMonthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMonthCell.m; sourceTree = "<group>"; };
-		A59706B622E0693F0020963B /* CTCalendarFlowLAyout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCalendarFlowLAyout.h; sourceTree = "<group>"; };
+		A59706B622E0693F0020963B /* CTCalendarFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCalendarFlowLayout.h; sourceTree = "<group>"; };
 		A59706B722E0693F0020963B /* CTMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMonthView.h; sourceTree = "<group>"; };
 		A59706B822E0693F0020963B /* CTMonthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMonthCell.h; sourceTree = "<group>"; };
 		A59706B922E0693F0020963B /* CTDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDayCell.h; sourceTree = "<group>"; };
-		A59706BA22E0693F0020963B /* CTCalendarFlowLAyout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCalendarFlowLAyout.m; sourceTree = "<group>"; };
+		A59706BA22E0693F0020963B /* CTCalendarFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCalendarFlowLayout.m; sourceTree = "<group>"; };
+		A59706BF22E078650020963B /* NSDate+Calander.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Calander.h"; sourceTree = "<group>"; };
+		A59706C022E078650020963B /* NSDate+Calander.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Calander.m"; sourceTree = "<group>"; };
+		A59706C222E0795B0020963B /* CTCalanderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalanderFile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +91,17 @@
 		A59706B222E0693F0020963B /* CTCalendarView */ = {
 			isa = PBXGroup;
 			children = (
-				A59706B622E0693F0020963B /* CTCalendarFlowLAyout.h */,
-				A59706BA22E0693F0020963B /* CTCalendarFlowLAyout.m */,
+				A59706B622E0693F0020963B /* CTCalendarFlowLayout.h */,
+				A59706BA22E0693F0020963B /* CTCalendarFlowLayout.m */,
 				A59706B922E0693F0020963B /* CTDayCell.h */,
 				A59706B422E0693F0020963B /* CTDayCell.m */,
 				A59706B822E0693F0020963B /* CTMonthCell.h */,
 				A59706B522E0693F0020963B /* CTMonthCell.m */,
 				A59706B722E0693F0020963B /* CTMonthView.h */,
 				A59706B322E0693F0020963B /* CTMonthView.m */,
+				A59706BF22E078650020963B /* NSDate+Calander.h */,
+				A59706C022E078650020963B /* NSDate+Calander.m */,
+				A59706C222E0795B0020963B /* CTCalanderFile.h */,
 			);
 			path = CTCalendarView;
 			sourceTree = "<group>";
@@ -169,12 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59706C122E078650020963B /* NSDate+Calander.m in Sources */,
 				A59706BB22E0693F0020963B /* CTMonthView.m in Sources */,
 				A59706BC22E0693F0020963B /* CTDayCell.m in Sources */,
 				A59706A122E0692F0020963B /* ViewController.m in Sources */,
 				A59706BD22E0693F0020963B /* CTMonthCell.m in Sources */,
 				A59706AC22E069310020963B /* main.m in Sources */,
-				A59706BE22E0693F0020963B /* CTCalendarFlowLAyout.m in Sources */,
+				A59706BE22E0693F0020963B /* CTCalendarFlowLayout.m in Sources */,
 				A597069E22E0692F0020963B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3J4FCH9PB8;
 				INFOPLIST_FILE = CTCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -325,7 +334,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tao.CTCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3J4FCH9PB8;
 				INFOPLIST_FILE = CTCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,7 +351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tao.CTCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

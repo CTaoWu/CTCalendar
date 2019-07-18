@@ -6,8 +6,8 @@
 //  Copyright © 2019 涛. All rights reserved.
 //
 
-#import "CTCalendarFlowLAyout.h"
+#import "CTCalendarFlowLayout.h"
 
-@implementation CTCalendarFlowLAyout
+@implementation CTCalendarFlowLayout
 
 @end
