@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CTDayCell : UICollectionViewCell
 
+@property (strong, nonatomic) UILabel * dayLab;
+
 @end
 
 NS_ASSUME_NONNULL_END

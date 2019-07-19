@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CTCalanderDayProtocols.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(strong, nonatomic) UICollectionView * daysContentView;
 
+@property (weak, nonatomic) id<CTCalanderDayProtocols> daysSource;
+
+- (void)setItemContent;
 @end
 
 NS_ASSUME_NONNULL_END

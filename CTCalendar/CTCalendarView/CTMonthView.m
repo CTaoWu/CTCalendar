@@ -10,32 +10,24 @@
 #import "CTCalendarFlowLayout.h"
 
 #import "CTMonthCell.h"
+#import "CTDayCell.h"
 #import "CTCalanderFile.h"
 
-@interface CTMonthView()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface CTMonthView()<UICollectionViewDelegate, UICollectionViewDataSource, CTCalanderDayProtocols>
 
 @end
 @implementation CTMonthView
 
 static NSString * CTMonthCellID = @"CTMonthCellID";
+static NSString * TMPCTDayCellID = @"TMPCTDayCellID";
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {        
-        CTCalendarFlowLayout * layout = [[CTCalendarFlowLayout alloc] init];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame));
-        layout.minimumInteritemSpacing = 0;
-        layout.minimumLineSpacing = 0;
-        
-        _monthView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
-        _monthView.pagingEnabled = true;
-        _monthView.delegate = self;
-        _monthView.dataSource = self;
-
-        [_monthView registerClass:[CTMonthCell class] forCellWithReuseIdentifier:CTMonthCellID];
-        [self addSubview:_monthView];
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+    self = [super initWithFrame:frame collectionViewLayout:layout];
+    if (self) {
+        self.delegate = self;
+        self.dataSource = self;
+        [self registerClass:[CTMonthCell class] forCellWithReuseIdentifier:CTMonthCellID];
+        [self registerClass:[CTDayCell class] forCellWithReuseIdentifier:TMPCTDayCellID];
     }
     return self;
 }
@@ -46,9 +38,17 @@ static NSString * CTMonthCellID = @"CTMonthCellID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CTMonthCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CTMonthCellID forIndexPath:indexPath];
-    cell.backgroundColor = RandomColor;
-    
+//    cell.daysSource = self;
+    [cell.daysContentView reloadData];
     return cell;
 }
 
+- (CTDayCell *)calendar:(UICollectionView *)daysContentView cellForItemAtDate:(NSDate *)date cellState:(NSString *)cellState indexPath:(NSIndexPath *)indexPath {
+    if (_monthSource && [_monthSource respondsToSelector:@selector(calendar:cellForItemAtDate:cellState:indexPath:)]) {
+        return [_monthSource calendar:daysContentView cellForItemAtDate:[NSDate date] cellState:@"test" indexPath:indexPath];
+    }
+    else {
+        return [self dequeueReusableCellWithReuseIdentifier:TMPCTDayCellID forIndexPath:indexPath];
+    }
+}
 @end

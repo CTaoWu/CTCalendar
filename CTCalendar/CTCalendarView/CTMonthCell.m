@@ -41,15 +41,28 @@ static NSString * CTDayCellID = @"CTDayCellIDID";
     return self;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CTDayCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CTDayCellID forIndexPath:indexPath];
-    cell.backgroundColor = RandomColor;
+- (void)setItemContent {
+    
+}
 
-    return cell;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (_daysSource && [_daysSource respondsToSelector:@selector(calendar:cellForItemAtDate:cellState:indexPath:)]) {
+        return [_daysSource calendar:collectionView cellForItemAtDate:[NSDate date] cellState:@"" indexPath:indexPath];
+    } else {
+        CTDayCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CTDayCellID forIndexPath:indexPath];
+        cell.dayLab.text = [NSString stringWithFormat:@"%zi", indexPath.row];
+        cell.backgroundColor = RandomColor;
+        return cell;
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [NSDate daysCountInMonth:[NSDate date]];
 }
+
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 7;
+//}
 @end
 

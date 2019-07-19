@@ -10,4 +10,17 @@
 
 @implementation CTDayCell
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = UIColor.yellowColor;
+        _dayLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
+        _dayLab.textAlignment = NSTextAlignmentCenter;
+        _dayLab.textColor = UIColor.blackColor;
+        _dayLab.font = [UIFont systemFontOfSize:14];
+        [self addSubview:_dayLab];
+    }
+    return self;
+}
 @end

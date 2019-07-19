@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class CTMonthView;
+@class CTDayCell;
+
 @protocol CTCalanderMonthProtocols <NSObject>
 
 @optional
 
-
+- (CTDayCell *)calendar:(UICollectionView *)monthView cellForItemAtDate:(NSDate *)date cellState:(NSString *)cellState indexPath:(NSIndexPath *)indexPath;
 
 @end
