@@ -13,5 +13,6 @@
 
 #define RGB(R,G,B,H) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:H]
 #define RandomColor RGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), 1)
+#define ScreenWidth UIScreen.mainScreen.bounds.size.width
 
 #endif /* CTCalanderFile_h */

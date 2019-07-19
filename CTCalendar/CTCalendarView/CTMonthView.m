@@ -47,12 +47,8 @@ static NSString * CTMonthCellID = @"CTMonthCellID";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CTMonthCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CTMonthCellID forIndexPath:indexPath];
     cell.backgroundColor = RandomColor;
-    [cell.daysContentView reloadData];
+    
     return cell;
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
 }
 
 @end

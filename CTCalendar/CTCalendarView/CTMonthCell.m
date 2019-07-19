@@ -23,13 +23,14 @@ static NSString * CTDayCellID = @"CTDayCellIDID";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+
         CTCalendarFlowLayout * layout = [[CTCalendarFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.itemSize = CGSizeMake(CGRectGetWidth(frame)/7, CGRectGetHeight(frame)/7);
+        layout.itemSize = CGSizeMake(CGRectGetWidth(self.frame)/7, CGRectGetHeight(self.frame)/7);
         layout.minimumInteritemSpacing = 10;
         layout.minimumLineSpacing = 10;
         
-        _daysContentView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
+        _daysContentView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:layout];
         _daysContentView.pagingEnabled = true;
         _daysContentView.delegate = self;
         _daysContentView.dataSource = self;
@@ -50,10 +51,5 @@ static NSString * CTDayCellID = @"CTDayCellIDID";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [NSDate daysCountInMonth:[NSDate date]];
 }
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
 @end
 
