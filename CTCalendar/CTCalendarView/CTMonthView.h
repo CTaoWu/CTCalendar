@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CTCalanderMonthProtocols.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CTMonthView : UIView
 
 @property(strong, nonatomic) UICollectionView * monthView;
+
+@property (weak, nonatomic) id<CTCalanderMonthProtocols> monthSource;
 
 @end
 

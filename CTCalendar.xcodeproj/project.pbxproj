@@ -21,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A50672B722E1723B00D52D70 /* CTCalanderMonthProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalanderMonthProtocols.h; sourceTree = "<group>"; };
+		A50672B822E1729500D52D70 /* CTCalanderDayProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalanderDayProtocols.h; sourceTree = "<group>"; };
+		A50672B922E172A200D52D70 /* CTCalanderYearProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalanderYearProtocols.h; sourceTree = "<group>"; };
 		A597069922E0692F0020963B /* CTCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597069C22E0692F0020963B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A597069D22E0692F0020963B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,6 +105,9 @@
 				A59706BF22E078650020963B /* NSDate+Calander.h */,
 				A59706C022E078650020963B /* NSDate+Calander.m */,
 				A59706C222E0795B0020963B /* CTCalanderFile.h */,
+				A50672B922E172A200D52D70 /* CTCalanderYearProtocols.h */,
+				A50672B722E1723B00D52D70 /* CTCalanderMonthProtocols.h */,
+				A50672B822E1729500D52D70 /* CTCalanderDayProtocols.h */,
 			);
 			path = CTCalendarView;
 			sourceTree = "<group>";
