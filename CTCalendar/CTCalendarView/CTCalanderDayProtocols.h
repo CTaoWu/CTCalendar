@@ -17,4 +17,6 @@
 
 - (CTDayCell *)calendar:(UICollectionView *)daysContentView cellForItemAtDate:(NSDate *)date cellState:(NSString *)cellState indexPath:(NSIndexPath *)indexPath;
 
+- (void)contentOffsetY:(CGFloat)y;
+
 @end

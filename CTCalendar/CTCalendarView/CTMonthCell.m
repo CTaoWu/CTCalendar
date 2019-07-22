@@ -9,11 +9,15 @@
 #import "CTMonthCell.h"
 
 #import "CTDayCell.h"
-#import "CTCalendarFlowLayout.h"
+#import "CTCalendarDaysLayout.h"
 
 #import "CTCalanderFile.h"
 
 @interface CTMonthCell()<UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (strong, nonatomic) CTCalendarDaysLayout * layout;
+
+@property (strong, nonatomic) NSMutableArray<CTDayCellModel *> * dayModels;
 
 @end
 @implementation CTMonthCell
@@ -24,25 +28,55 @@ static NSString * CTDayCellID = @"CTDayCellIDID";
     self = [super initWithFrame:frame];
     if (self) {
 
-        CTCalendarFlowLayout * layout = [[CTCalendarFlowLayout alloc] init];
-        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.itemSize = CGSizeMake(CGRectGetWidth(self.frame)/7, CGRectGetHeight(self.frame)/7);
-        layout.minimumInteritemSpacing = 10;
-        layout.minimumLineSpacing = 10;
+        CGFloat space = 5;
+        CGFloat size = (CGRectGetWidth(self.frame) - space*6)/7;
+        _dayModels = [NSMutableArray array];
         
-        _daysContentView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:layout];
+        _layout = [[CTCalendarDaysLayout alloc] init];
+        _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        _layout.itemSize = CGSizeMake(size, size);
+        _layout.minimumInteritemSpacing = space;
+        _layout.minimumLineSpacing = space;
+        
+        _daysContentView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:_layout];
         _daysContentView.pagingEnabled = true;
         _daysContentView.delegate = self;
         _daysContentView.dataSource = self;
+        _daysContentView.backgroundColor = UIColor.whiteColor;
         
         [_daysContentView registerClass:[CTDayCell class] forCellWithReuseIdentifier:CTDayCellID];
         [self addSubview:_daysContentView];
+
     }
     return self;
 }
 
-- (void)setItemContent {
-    
+- (void)setMonthKey:(NSDate *)monthKey {
+    _monthKey = monthKey;
+    NSInteger firstWeekDay = [NSDate firstWeekDayInThisMonth:monthKey];// 3周二,4:周三,5:四=
+    for (NSInteger i = 0; i < 42; i ++) {
+        CTDayCellModel * model = [CTDayCellModel new];
+        NSDate * tmpDate = [NSDate appointDayWith:[NSDate getFirstDayInMonth:monthKey] index:i - firstWeekDay + 1];
+
+        /// 从第一天开始算,如果小于当月开始的第一天的星期几,则是上个月的日期
+        if (i < firstWeekDay - 1) {
+            model.inThisMonth = false;
+        }
+        else if (i > firstWeekDay - 2 + [NSDate daysCountInMonth:monthKey]) {
+            model.inThisMonth = false;
+        }
+        else {
+            model.inThisMonth = true;
+        }
+        
+        model.dateKey = [NSDate getDateString:tmpDate with:@""];
+        model.month = [NSDate month:tmpDate];
+        model.year = [NSDate year:tmpDate];
+        model.day = [NSDate day:tmpDate];
+        
+        [_dayModels addObject:model];
+    }
+    [_daysContentView reloadData];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -51,14 +85,20 @@ static NSString * CTDayCellID = @"CTDayCellIDID";
         return [_daysSource calendar:collectionView cellForItemAtDate:[NSDate date] cellState:@"" indexPath:indexPath];
     } else {
         CTDayCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CTDayCellID forIndexPath:indexPath];
-        cell.dayLab.text = [NSString stringWithFormat:@"%zi", indexPath.row];
-        cell.backgroundColor = RandomColor;
+//        cell.dayLab.text = [NSString stringWithFormat:@"%zi", indexPath.row];
+        cell.dayLab.text = [NSString stringWithFormat:@"%zi", _dayModels[indexPath.row].day];
+        if (!_dayModels[indexPath.row].inThisMonth) {
+            cell.dayLab.textColor = [UIColor redColor];
+        } else {
+            cell.dayLab.textColor = [UIColor blackColor];
+        }
         return cell;
     }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [NSDate daysCountInMonth:[NSDate date]];
+//    return [NSDate daysCountInMonth:[NSDate date]];
+    return 42;
 }
 
 //- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

@@ -10,6 +10,7 @@
 #define CTCalanderFile_h
 
 #import "NSDate+Calander.h"
+#import "CTDateManager.h"
 
 #define RGB(R,G,B,H) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:H]
 #define RandomColor RGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), 1)

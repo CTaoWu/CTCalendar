@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) id<CTCalanderDayProtocols> daysSource;
 
-- (void)setItemContent;
+@property (strong, nonatomic) NSDate * monthKey;
+
 @end
 
 NS_ASSUME_NONNULL_END

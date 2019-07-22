@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) id<CTCalanderMonthProtocols> monthSource;
 
+- (void)tableViewContentOffsetY:(CGFloat)tableViewContentOffsetY;
+
+- (void)nextPage;
+
+- (void)lastPage;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,9 +10,5 @@
 
 @implementation DayCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
 
 @end

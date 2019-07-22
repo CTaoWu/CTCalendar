@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = UIColor.yellowColor;
+        self.backgroundColor = UIColor.whiteColor;
         _dayLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
         _dayLab.textAlignment = NSTextAlignmentCenter;
         _dayLab.textColor = UIColor.blackColor;
