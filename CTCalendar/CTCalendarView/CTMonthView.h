@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CTCalendarAppearance.h"
 #import "CTCalanderMonthProtocols.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CTMonthView : UICollectionView
 
 @property (weak, nonatomic) id<CTCalanderMonthProtocols> monthSource;
+
+@property (strong, nonatomic) CTCalendarAppearance * appearance;
 
 - (void)tableViewContentOffsetY:(CGFloat)tableViewContentOffsetY;
 

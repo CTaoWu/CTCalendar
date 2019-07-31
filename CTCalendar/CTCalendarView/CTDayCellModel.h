@@ -21,11 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSInteger month;
 /* 年 */
 @property (assign, nonatomic) NSInteger year;
-/* 今天 */
-@property (assign, nonatomic) NSInteger today;
+/* 是否今天 */
+@property (assign, nonatomic) BOOL today;
 /* 是否在本月 */
 @property (assign, nonatomic) BOOL inThisMonth;
-
+/* 是否被选中 */
+@property (assign, nonatomic) BOOL select;
+/* 是否有事件 */
+@property (assign, nonatomic) BOOL happenEvent;
 @end
 
 NS_ASSUME_NONNULL_END

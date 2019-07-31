@@ -55,7 +55,8 @@
 #pragma - mark ======= 获取当月的第一天是星期几 =======
 + (NSInteger)firstWeekDayInThisMonth:(NSDate *)date {
     
-    NSDateComponents * comps = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:date];
+    NSCalendar * calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents * comps = [calendar components:NSCalendarUnitWeekday fromDate:date];
     
     return [comps weekday];
 }
@@ -148,4 +149,14 @@
     return [self getDatesWithStartDate:startDate endDate:endDate];
 }
 
++ (BOOL)isSameDate:(NSDate *)date1 otherDate:(NSDate *)date2 {
+    NSCalendar * calendar = [NSCalendar currentCalendar];
+    NSDateComponents * comps1 = [calendar components:(NSCalendarUnitYear|NSCalendarUnitWeekday|NSCalendarUnitMonth|NSCalendarUnitDay) fromDate:date1];
+    NSDateComponents * comps2 = [calendar components:(NSCalendarUnitYear|NSCalendarUnitWeekday|NSCalendarUnitMonth|NSCalendarUnitDay) fromDate:date2];
+    
+    BOOL result = [comps1 year] == [comps2 year]
+                && [comps1 month] == [comps2 month]
+                && [comps1 day] == [comps2 day];
+    return result;
+}
 @end

@@ -8,7 +8,6 @@
 
 #import "CTMonthView.h"
 #import "CTCalendarFlowLayout.h"
-
 #import "CTMonthCell.h"
 #import "CTDayCell.h"
 #import "CTCalanderFile.h"
@@ -30,6 +29,7 @@ static NSString * TMPCTDayCellID = @"TMPCTDayCellID";
     if (self) {
         self.delegate = self;
         self.dataSource = self;
+        
         [self registerClass:[CTMonthCell class] forCellWithReuseIdentifier:CTMonthCellID];
         [self registerClass:[CTDayCell class] forCellWithReuseIdentifier:TMPCTDayCellID];
         
@@ -47,6 +47,7 @@ static NSString * TMPCTDayCellID = @"TMPCTDayCellID";
     CTMonthCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CTMonthCellID forIndexPath:indexPath];
 //    cell.daysSource = self;
     cell.monthKey = _dateArray[indexPath.row];
+    cell.appearance = _appearance;
     _superCell = cell;
     return cell;
 }
@@ -63,7 +64,8 @@ static NSString * TMPCTDayCellID = @"TMPCTDayCellID";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
+ 
+//    NSLog(@"%f",scrollView.contentOffset.y);
 }
 
 - (void)tableViewContentOffsetY:(CGFloat)tableViewContentOffsetY {

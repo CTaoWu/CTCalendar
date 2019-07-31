@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSDate *)appointMonthWith:(NSDate *)date index:(NSInteger)index;
 + (NSDate *)appointYearWith:(NSDate *)date index:(NSInteger)index;
-/** 获取当月的上下几个月的date */
+/** 获取当月的上下几天的date */
 + (NSDate *)appointDayWith:(NSDate *)date index:(NSInteger)index;
 /** 获取时间段内的所有日期 */
 + (NSArray*)getDatesWithStartDate:(NSString *)startDate endDate:(NSString *)endDate;
@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
  获取当月的日期
  */
 + (NSArray *)getDatesInThisMonth:(NSDate *)date;
+/** 判断两个日期是否是同一天 */
++ (BOOL)isSameDate:(NSDate *)date1 otherDate:(NSDate *)date2;
 @end
 
 NS_ASSUME_NONNULL_END

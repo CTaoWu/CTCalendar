@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "CTCalendarFlowLayout.h"
 #import "DayCell.h"
-
+#import "CTCalendarAppearance.h"
 #import "CTMonthView.h"
 #import "NSDate+Calander.h"
 #import "CTCalanderFile.h"
@@ -42,18 +42,24 @@
     
     _layout = [[CTCalendarFlowLayout alloc] init];
     _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _layout.itemSize = CGSizeMake(ScreenWidth, 550);
+    _layout.itemSize = CGSizeMake(ScreenWidth, 400);
     _layout.minimumInteritemSpacing = 0;
     _layout.minimumLineSpacing = 0;
     
-    _monthView = [[CTMonthView alloc] initWithFrame:CGRectMake(0, 150, ScreenWidth, 550) collectionViewLayout:_layout];
+    CTCalendarAppearance * appearance = [[CTCalendarAppearance alloc] init];
+//    appearance.todayTextColor = [UIColor yellowColor];
+//    appearance.dayColor = [UIColor blackColor];
+//    appearance.otherMonthColor = [UIColor blueColor];
+    
+    _monthView = [[CTMonthView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 400) collectionViewLayout:_layout];
     _monthView.pagingEnabled = true;
     _monthView.bounces = true;
     _monthView.monthSource = self;
+    _monthView.appearance = appearance;
     [_monthView registerNib:[UINib nibWithNibName:@"DayCell" bundle:nil] forCellWithReuseIdentifier:@"DayCellID"];
-    [self.view addSubview:_monthView];
+//    [self.view addSubview:_monthView];
 
-//    [self setTableView];
+    [self setTableView];
 }
 
 - (void)lastAction {
@@ -65,7 +71,7 @@
 }
 
 - (void)setTableView {
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, ScreenWidth, ScreenHeight - 120) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
 //    _tableView.bounces = false;
@@ -93,10 +99,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return 400 - _tableViewContentOffsetY;
-    }
-    return 400;
+//    if (indexPath.row == 0) {
+//        return 400 - _tableViewContentOffsetY;
+//    }
+    return _monthView.bounds.size.height;
 }
 
 - (CTDayCell *)calendar:(UICollectionView *)monthCell cellForItemAtDate:(NSDate *)date cellState:(NSString *)cellState indexPath:(NSIndexPath *)indexPath {

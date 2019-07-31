@@ -15,14 +15,20 @@
 //    
 //    for (int i = 0; i < layoutattributes.count; i++) {
 //        UICollectionViewLayoutAttributes * attribute = layoutattributes[i];
-//        CGFloat collectionViewY = self.collectionView.contentOffset.y;
-//        if (collectionViewY > 0) {
-//            break;
+//        
+//        if (attribute.representedElementKind != UICollectionElementKindSectionHeader &&
+//            attribute.representedElementKind != UICollectionElementKindSectionFooter) {
+//            
+//            CGFloat collectionViewY = self.collectionView.contentOffset.y;
+//            if (collectionViewY > 0) {
+//                break;
+//            }
+//            CGFloat width = (CGRectGetWidth(self.collectionView.frame) - 5*6)/7;
+//            /* 偏移多少,就给他高度设置多少 */
+//            CGFloat height = attribute.frame.size.height - collectionViewY;
+//            attribute.frame = CGRectMake(attribute.frame.origin.x, attribute.frame.origin.y, attribute.frame.size.width, attribute.frame.size.height*2);
 //        }
-//        CGFloat width = self.collectionView.frame.size.width;
-//        /* 偏移多少,就给他高度设置多少 */
-//        CGFloat height = attribute.frame.size.height - collectionViewY;
-//        attribute.frame = CGRectMake(0, collectionViewY, width, height);
+//
 //    }
 //    return layoutattributes;
 //}

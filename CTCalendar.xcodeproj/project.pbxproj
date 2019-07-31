@@ -11,6 +11,14 @@
 		A506651A22E4001A00AE4CE8 /* CTDayCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A506651922E4001A00AE4CE8 /* CTDayCellModel.m */; };
 		A50672BD22E19E9900D52D70 /* DayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50672BB22E19E9900D52D70 /* DayCell.m */; };
 		A50672C422E1C7A800D52D70 /* CTCalendarDaysLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A50672C322E1C7A800D52D70 /* CTCalendarDaysLayout.m */; };
+		A506DAD022E59600007782DF /* CTCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A506DACF22E59600007782DF /* CTCalendarView.m */; };
+		A506DAD322E59814007782DF /* CTCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = A506DAD222E59814007782DF /* CTCalendarAppearance.m */; };
+		A506DAD722E5C62D007782DF /* CTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = A506DAD522E5C62D007782DF /* CTCalendarWeekView.m */; };
+		A506DAD822E5C62D007782DF /* CTCalendarWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506DAD622E5C62D007782DF /* CTCalendarWeekView.xib */; };
+		A51217FE22EE9531009FDAEB /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51217FC22EE9531009FDAEB /* TestViewController.m */; };
+		A51217FF22EE9531009FDAEB /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51217FD22EE9531009FDAEB /* TestViewController.xib */; };
+		A512180322EE971C009FDAEB /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A512180122EE971C009FDAEB /* TestCollectionViewCell.m */; };
+		A512180422EE971C009FDAEB /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A512180222EE971C009FDAEB /* TestCollectionViewCell.xib */; };
 		A597069E22E0692F0020963B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A597069D22E0692F0020963B /* AppDelegate.m */; };
 		A59706A122E0692F0020963B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59706A022E0692F0020963B /* ViewController.m */; };
 		A59706A422E0692F0020963B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59706A222E0692F0020963B /* Main.storyboard */; };
@@ -36,6 +44,19 @@
 		A50672BB22E19E9900D52D70 /* DayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayCell.m; sourceTree = "<group>"; };
 		A50672C222E1C7A800D52D70 /* CTCalendarDaysLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalendarDaysLayout.h; sourceTree = "<group>"; };
 		A50672C322E1C7A800D52D70 /* CTCalendarDaysLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCalendarDaysLayout.m; sourceTree = "<group>"; };
+		A506DACE22E59600007782DF /* CTCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalendarView.h; sourceTree = "<group>"; };
+		A506DACF22E59600007782DF /* CTCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCalendarView.m; sourceTree = "<group>"; };
+		A506DAD122E59814007782DF /* CTCalendarAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalendarAppearance.h; sourceTree = "<group>"; };
+		A506DAD222E59814007782DF /* CTCalendarAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCalendarAppearance.m; sourceTree = "<group>"; };
+		A506DAD422E5C62D007782DF /* CTCalendarWeekView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCalendarWeekView.h; sourceTree = "<group>"; };
+		A506DAD522E5C62D007782DF /* CTCalendarWeekView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCalendarWeekView.m; sourceTree = "<group>"; };
+		A506DAD622E5C62D007782DF /* CTCalendarWeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTCalendarWeekView.xib; sourceTree = "<group>"; };
+		A51217FB22EE9531009FDAEB /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		A51217FC22EE9531009FDAEB /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		A51217FD22EE9531009FDAEB /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		A512180022EE971C009FDAEB /* TestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		A512180122EE971C009FDAEB /* TestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		A512180222EE971C009FDAEB /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
 		A597069922E0692F0020963B /* CTCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597069C22E0692F0020963B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A597069D22E0692F0020963B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +115,12 @@
 				A597069D22E0692F0020963B /* AppDelegate.m */,
 				A597069F22E0692F0020963B /* ViewController.h */,
 				A59706A022E0692F0020963B /* ViewController.m */,
+				A51217FB22EE9531009FDAEB /* TestViewController.h */,
+				A51217FC22EE9531009FDAEB /* TestViewController.m */,
+				A51217FD22EE9531009FDAEB /* TestViewController.xib */,
+				A512180022EE971C009FDAEB /* TestCollectionViewCell.h */,
+				A512180122EE971C009FDAEB /* TestCollectionViewCell.m */,
+				A512180222EE971C009FDAEB /* TestCollectionViewCell.xib */,
 				A50672BA22E19E9900D52D70 /* DayCell.h */,
 				A50672BB22E19E9900D52D70 /* DayCell.m */,
 				A59706A222E0692F0020963B /* Main.storyboard */,
@@ -108,23 +135,30 @@
 		A59706B222E0693F0020963B /* CTCalendarView */ = {
 			isa = PBXGroup;
 			children = (
-				A59706B622E0693F0020963B /* CTCalendarFlowLayout.h */,
-				A59706BA22E0693F0020963B /* CTCalendarFlowLayout.m */,
-				A50672C222E1C7A800D52D70 /* CTCalendarDaysLayout.h */,
-				A50672C322E1C7A800D52D70 /* CTCalendarDaysLayout.m */,
+				A59706C222E0795B0020963B /* CTCalanderFile.h */,
 				A59706B922E0693F0020963B /* CTDayCell.h */,
 				A59706B422E0693F0020963B /* CTDayCell.m */,
 				A59706B822E0693F0020963B /* CTMonthCell.h */,
 				A59706B522E0693F0020963B /* CTMonthCell.m */,
 				A59706B722E0693F0020963B /* CTMonthView.h */,
 				A59706B322E0693F0020963B /* CTMonthView.m */,
-				A59706BF22E078650020963B /* NSDate+Calander.h */,
-				A59706C022E078650020963B /* NSDate+Calander.m */,
+				A506DAD122E59814007782DF /* CTCalendarAppearance.h */,
+				A506DAD222E59814007782DF /* CTCalendarAppearance.m */,
+				A506DACE22E59600007782DF /* CTCalendarView.h */,
+				A506DACF22E59600007782DF /* CTCalendarView.m */,
+				A506DAD422E5C62D007782DF /* CTCalendarWeekView.h */,
+				A506DAD522E5C62D007782DF /* CTCalendarWeekView.m */,
+				A506DAD622E5C62D007782DF /* CTCalendarWeekView.xib */,
 				A506651522E3FFD500AE4CE8 /* CTDateManager.h */,
 				A506651622E3FFD500AE4CE8 /* CTDateManager.m */,
 				A506651822E4001A00AE4CE8 /* CTDayCellModel.h */,
 				A506651922E4001A00AE4CE8 /* CTDayCellModel.m */,
-				A59706C222E0795B0020963B /* CTCalanderFile.h */,
+				A59706BF22E078650020963B /* NSDate+Calander.h */,
+				A59706C022E078650020963B /* NSDate+Calander.m */,
+				A59706B622E0693F0020963B /* CTCalendarFlowLayout.h */,
+				A59706BA22E0693F0020963B /* CTCalendarFlowLayout.m */,
+				A50672C222E1C7A800D52D70 /* CTCalendarDaysLayout.h */,
+				A50672C322E1C7A800D52D70 /* CTCalendarDaysLayout.m */,
 				A50672B922E172A200D52D70 /* CTCalanderYearProtocols.h */,
 				A50672B722E1723B00D52D70 /* CTCalanderMonthProtocols.h */,
 				A50672B822E1729500D52D70 /* CTCalanderDayProtocols.h */,
@@ -190,8 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59706A922E069310020963B /* LaunchScreen.storyboard in Resources */,
+				A51217FF22EE9531009FDAEB /* TestViewController.xib in Resources */,
+				A512180422EE971C009FDAEB /* TestCollectionViewCell.xib in Resources */,
 				A59706A622E069310020963B /* Assets.xcassets in Resources */,
 				A59706A422E0692F0020963B /* Main.storyboard in Resources */,
+				A506DAD822E5C62D007782DF /* CTCalendarWeekView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,15 +241,20 @@
 			files = (
 				A59706C122E078650020963B /* NSDate+Calander.m in Sources */,
 				A506651A22E4001A00AE4CE8 /* CTDayCellModel.m in Sources */,
+				A512180322EE971C009FDAEB /* TestCollectionViewCell.m in Sources */,
+				A506DAD322E59814007782DF /* CTCalendarAppearance.m in Sources */,
 				A506651722E3FFD500AE4CE8 /* CTDateManager.m in Sources */,
+				A506DAD722E5C62D007782DF /* CTCalendarWeekView.m in Sources */,
 				A59706BB22E0693F0020963B /* CTMonthView.m in Sources */,
 				A59706BC22E0693F0020963B /* CTDayCell.m in Sources */,
 				A59706A122E0692F0020963B /* ViewController.m in Sources */,
 				A59706BD22E0693F0020963B /* CTMonthCell.m in Sources */,
+				A506DAD022E59600007782DF /* CTCalendarView.m in Sources */,
 				A50672BD22E19E9900D52D70 /* DayCell.m in Sources */,
 				A59706AC22E069310020963B /* main.m in Sources */,
 				A50672C422E1C7A800D52D70 /* CTCalendarDaysLayout.m in Sources */,
 				A59706BE22E0693F0020963B /* CTCalendarFlowLayout.m in Sources */,
+				A51217FE22EE9531009FDAEB /* TestViewController.m in Sources */,
 				A597069E22E0692F0020963B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
